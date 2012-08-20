@@ -4,7 +4,7 @@ ElasticSearch Helpers
 Prerequisites
 -------------
 
-These sripts only work with Bro if you're using the new [ElasticSearch Logging](http://git.bro-ids.org/bro.git/blob/HEAD:/doc/logging-elasticsearch.rst) plugin.
+These scripts only work with Bro if you're using the new [ElasticSearch Logging](http://git.bro-ids.org/bro.git/blob/HEAD:/doc/logging-elasticsearch.rst) plugin.
 
 Please refer to that documentation for getting ElasticSearch setup, and receiving logs.
 
