@@ -41,6 +41,8 @@ $ pip install git+https://github.com/grigorescu/es_helpers.git
 
 Command hooks are installed in the ``bin`` directory of your virtualenv.
 
+**Configuration**: To set the ES server and port, edit the settings in lib/python2.X/site-packages/es_helpers-$version/es_helpers/es_config.py
+
 es_cleanup.py
 -------------
 
@@ -50,12 +52,26 @@ Deletes indices older than a specified number of days.
     Usage:   
              es_cleanup numDays
     Args:    
-             numDays - Indexes that end before $currentTime - numDays days ago will be deleted.
+             numDays - Indices that end before $currentTime - numDays days ago will be deleted.
     Example: 
-             es_cleanup 7 - Delete all indexes that end before this time a week ago.
+             es_cleanup 7 - Delete all indices that end before this time a week ago.
 ```
 
-**Configuration**: To set the ES server and port, edit the settings at the top of the file, which is located in lib/python2.X/site-packages/es_helpers.
+es_optimize.py
+-------------
+
+By default, ElasticSearch will spread the files for each index over many (often thousands) of files. To help with performance, the optimize command will merge these files into a single file per shard.
+
+Optimizes indices older than a specified number of hours.
+
+```    
+    Usage:   
+             es_optimize numHours
+    Args:    
+             numHours - Indices that end before $currentTime - numHours hours ago will be deleted.
+    Example: 
+             es_optimize 3 - Optimize all indices that ended 3 hours ago or more.
+```
 
 Issues
 ------
