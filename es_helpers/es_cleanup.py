@@ -3,10 +3,9 @@
 import requests
 import datetime
 import sys
+import es_config
 
-elasticsearch_host = "localhost"
-elasticsearch_port = 9200
-elasticsearch_url = "http://%s:%d" % (elasticsearch_host, elasticsearch_port)
+elasticsearch_url = "http://%s:%d" % (es_config.elasticsearch_host, es_config.elasticsearch_port)
 
 def delete():
     """Deletes logs older than a specified number of days."""
