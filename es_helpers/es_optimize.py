@@ -24,7 +24,7 @@ def optimize():
 
     cutoff = datetime.datetime.now() - datetime.timedelta(hours=numHours)
 
-    r = requests.get('%s/@bro-meta/index/_search' % elasticsearch_url)
+    r = requests.get('%s/@bro-meta/index/_search?size=10000' % elasticsearch_url)
     for index in r.json['hits']['hits']:
         end_timestamp = datetime.datetime.fromtimestamp(index['_source']['end'])
         index_name = index['_source']['name']
